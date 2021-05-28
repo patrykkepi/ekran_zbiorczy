@@ -1,9 +1,7 @@
-const id_fst = 4;
-
 start();
 async function start(){
     //convert to milisec
-    const intervalTime = await getRefreshPeriod()*10000;
+    const intervalTime = await getRefreshPeriod()*1000;
 
     showScreen2();
     window.setInterval(function(){
@@ -42,7 +40,7 @@ async function showScreen1(){
             <p class="number-b">`+ thisMachine.product_name +`</p>
         </div>
         <div class="element `+ colorOfElement("oee_overall", thisMachine) +`">
-            <p class="number-b">`+ (parseFloat(thisMachine.efficiency_sec)*60).toFixed(2) +`</p>
+            <p class="number-b">`+ (parseFloat(thisMachine.efficiency_sec)*60).toFixed(0) +`</p>
         </div>
         <div class="element blue-light">
             <p class="number-b">`+ thisMachine.proper_count +`</p>
@@ -51,7 +49,7 @@ async function showScreen1(){
             <p class="number-b">`+ summ +`</p>
         </div>
         <div class="element blue-light">
-            <p class="number-b">`+ thisMachine.meanweight_value_g +`</p>
+            <p class="number-b">`+ (parseFloat(thisMachine.meanweight_value_g)).toFixed(2) +`</p>
         </div>
         `;
 
@@ -79,22 +77,22 @@ async function showScreen2(){
             <p class="machine-name">`+ thisMachine.dacs_name_short +`</p>
         </div>
         <div class="element gray">
-            <p class="number-s">`+ parseFloat(thisMachine.unplanned_breaks_sec)*60 +`</p>
+            <p class="number-s">`+ (parseFloat(thisMachine.unplanned_breaks_sec)/60).toFixed(0) +`</p>
         </div>
         <div class="element gray">
-            <p class="number-s">`+ parseFloat(thisMachine.planned_breaks_sec)*60  +`</p>
+            <p class="number-s">`+ (parseFloat(thisMachine.planned_breaks_sec)/60).toFixed(0)  +`</p>
         </div>
         <div class="element `+ colorOfElement("oee_overall", thisMachine) +`">
-            <p class="number-b">`+ thisMachine.oee_overall +`</p>
+            <p class="number-b">`+ (parseFloat(thisMachine.oee_overall)).toFixed(0) +`</p>
         </div>
         <div class="element `+ colorOfElement("oee_efficiency", thisMachine) +`">
-            <p class="number-b">`+ thisMachine.oee_efficiency +`</p>
+            <p class="number-b">`+ (parseFloat(thisMachine.oee_efficiency)).toFixed(0) +`</p>
         </div>
         <div class="element `+ colorOfElement("oee_quality", thisMachine) +`">
-            <p class="number-b">`+ thisMachine.oee_quality +`</p>
+            <p class="number-b">`+ (parseFloat(thisMachine.oee_quality)).toFixed(0) +`</p>
         </div>
         <div class="element `+ colorOfElement("oee_availability", thisMachine) +`">
-            <p class="number-b">`+ thisMachine.oee_availability +`</p>
+            <p class="number-b">`+ (parseFloat(thisMachine.oee_availability)).toFixed(0) +`</p>
         </div>
         `;
 
@@ -120,13 +118,10 @@ function getRefreshPeriod(){
     return new Promise(resolve => {
         $.ajax({
             type: "GET",
-            url: "getRefreshPeriod.php",
-            data: {
-                id_fst: id_fst
-            }
+            url: "getRefreshPeriod.php"
         }).then(response => {
             let jsonData = JSON.parse(response).data;
-            resolve(jsonData[0].refresh_period);
+            resolve(jsonData[0].refresh_period_s);
         })
     });
 }

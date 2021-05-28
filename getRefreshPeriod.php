@@ -1,9 +1,9 @@
 <?php
 
 require_once('bdd.php');
-$id_fst = $_GET['id_fst'];
+
 try{
-    $sql = sprintf("SELECT refresh_period FROM fdcs_settings_table WHERE id_fst = %d", $id_fst);
+    $sql = sprintf("SELECT refresh_period_s FROM fdcs_settings_table");
 
     $req = $bdd->prepare($sql);
     $req->execute();
