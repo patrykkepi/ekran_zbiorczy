@@ -39,7 +39,7 @@ async function showScreen1(){
         <div class="element blue-light">
             <p class="number-b">`+ thisMachine.product_name +`</p>
         </div>
-        <div class="element `+ colorOfElement("oee_overall", thisMachine) +`">
+        <div class="element `+ colorOfElement("oee_efficiency", thisMachine) +`">
             <p class="number-b">`+ (parseFloat(thisMachine.efficiency_sec)*60).toFixed(0) +`</p>
         </div>
         <div class="element blue-light">
@@ -128,7 +128,7 @@ function getRefreshPeriod(){
 
 
 function colorOfElement(elementId, machineData){
-    let value = parseFloat(machineData[elementId]);
+    let value = parseFloat(machineData[elementId]).toFixed(0);
     switch(elementId){
         case "oee_overall":
             if(value >= parseFloat(machineData.oee_red_min) && value <= parseFloat(machineData.oee_red_max))
