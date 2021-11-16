@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css" type="text/css">
-        <title>FDCS</title>
+        <title>PALETY</title>
 
         <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32"> 
         <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16"> 
@@ -11,81 +11,73 @@
         <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>        
-        <div class="page-container" id="page1">
-            <div class="left-bar-column">
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                        <p class="rotated-header">LINIA</p>
+        <div class="page-container">
+            <div class="line-title">
+                <div class="text-center blue">
+                    <div class="resizeable-text">LINIA 3</div>
+                </div>
+            </div>
+            <div class="line-info">
+                <div class="line-info-column">
+                    <div class="text-center gray">
+                        <div class="resizeable-text">ZMIANA 1</div>
+                    </div>
+                    <div class="text-center blue-light">
+                        <div id="format_name" class="resizeable-text"></div>
                     </div>
                 </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                    <p class="rotated-header">PRODUKT</p>
+                <div class="line-info-column">
+                    <div class="text-center gray">
+                        <div id="timeNow" class="resizeable-text"></div>
+                    </div>
+                    <div class="element blue-light">
+                        <img src="Fenix_duzy_bialy.png" class="logo">
                     </div>
                 </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                    <p class="rotated-header">WYDAJNOŚĆ<br>[szt/min]</p>
+                <div class="line-info-column">
+                    <div class="text-center gray">
+                        <div id="code_description_pl" class="resizeable-text"></div>
                     </div>
-                </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                    <p class="rotated-header">POPRAWNE<br>[szt]</p>
-                    </div>
-                </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                    <p class="rotated-header">ODRZUCONE<br>[szt]</p>
-                    </div>
-                </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                    <p class="rotated-header">ŚREDNIA<br>[g]</p>
+                    <div class="text-center blue-light">
+                        <div id="last_min_outbound_count" class="resizeable-text"></div>
                     </div>
                 </div>
             </div>
-            <div id="machineListPage1" class="machine-list">
-
-            </div>
-        </div>
-
-        
-        <div class="page-container" id="page2">
-            <div class="left-bar-column">
-                 <div class="element blue-l">
-                     <div class="rotated-container">
-                        <p class="rotated-header">LINIA</p>
-                     </div>
-                 </div>
-                 <div class="element blue-l">
-                    <div class="rotated-container">
-                       <p class="rotated-header">PRZERWY<br>[min]</p>
+            <div class="line-data">
+                <div class="data-column">
+                    <div></div>
+                    <div class="text-center blue rotated-container">
+                        <div class="resizeable-text">OPAKOWANIA</div>
+                    </div>
+                    <div class="text-center blue rotated-container">
+                        <div class="resizeable-text">KARTONY</div>
                     </div>
                 </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                       <p class="rotated-header">OEE<br>[%]</p>
+                <div class="data-column">
+                    <div class="text-center blue">
+                        <div class="resizeable-text">WYPRODUKOWANO</div>
+                    </div>
+                    <div class="text-center yellow">
+                        <div id="incoming_count" class="resizeable-text"></div>
+                    </div>
+                    <div class="text-center yellow">
+                        <div id="exit_count" class="resizeable-text"></div>
                     </div>
                 </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                       <p class="rotated-header">WYDAJNOŚĆ<br>[%]</p>
+                <div class="data-column">
+                    <div class="text-center blue">
+                        <div class="resizeable-text">ODRZUCONO</div>
+                    </div>
+                    <div class="text-center yellow">
+                        <div class="resizeable-text">0</div>
+                    </div>
+                    <div class="text-center yellow">
+                        <div id="discarded_carton_open_flap" class="resizeable-text"></div>
                     </div>
                 </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                       <p class="rotated-header">JAKOŚĆ<br>[%]</p>
-                    </div>
-                </div>
-                <div class="element blue-l">
-                    <div class="rotated-container">
-                       <p class="rotated-header">DOSTĘPNOŚĆ<br>[%]</p>
-                    </div>
-                </div>
-            </div>
-            <div id="machineListPage2" class="machine-list">
             </div>
         </div>
-        <script src="main.js" type="text/javascript"></script>
+        <script src="js/db.js" type="text/javascript"></script>
+        <script src="main.js"  type="text/javascript"></script>
     </body>
 </html>

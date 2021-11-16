@@ -7,89 +7,76 @@
     left: 0;
     background-color: #002f46;
     color: white;
-    display: grid;
-    grid-template-columns: 4.8vw 95.2vw;
     font-family: Arial Black, Gadget, sans-serif;
     overflow: hidden;
-}
-p{
-    margin: 0;
-}
-.machine-list {
     display: grid;
-    grid-template-columns: 11.9vw 11.9vw 11.9vw 11.9vw 11.9vw 11.9vw 11.9vw 11.9vw;
+    grid-template-rows: 10% 30% 60%;
 }
-.left-bar-column {
-    display: grid;
-    grid-template-rows: 10vh 18vh 18vh 18vh 18vh 18vh;
-}
+
 .element {
-    margin: 0.4vw;
-}
-.blue-l {
-    background-color: #005f8e;
-    width: 4vw;
-}
-.rotated-container{
-    transform: translate(-25%, 50%);
-    height: 100%;
-    width: 8vw;
-}
-
-.rotated-header {
-    transform: translate(0, -50%) rotate(-90deg);
-    margin: 0;
-    font-size: min(1.8vh, 1vw);
+    margin: min(1vw, 1vh);
     text-align: center;
 }
+.line-title {
+    display: grid;
+}
 
-.machine-column-1{
+.line-info {
     display: grid;
-    grid-template-rows: 10vh 18vh 18vh 18vh 18vh 18vh;
+    grid-template-columns: 33.3% 33.3% 33.4%;
 }
-.machine-column-2{
+.line-info-column {
     display: grid;
-    grid-template-rows: 10vh 9vh 9vh 18vh 18vh 18vh 18vh;
+    grid-template-rows: 30% 70%;
 }
-.blue-t {
-    background-color: #005f8e;
-}
-.machine-name {
-    text-align: center;
-    font-size: min(7vh, 4vw);
+.logo {
+    width: min(20vw, 30vh);
+    transform: translate(0%, -53%);
     top: 50%;
-    transform: translate(0, -50%);
     position: relative;
 }
+.line-data {
+    display: grid;
+    grid-template-columns: 6% 47% 47%;
+}
+.data-column {
+    display: grid;
+    grid-template-rows: 20% 40% 40%;
+}
+
 
 .gray {
     background-color: #7f7f7f;
 }
-.green {
+.yellow {
     background-color: #b8b400;
 }
 .red {
     background-color: #e31c24;
 }
-.yellow {
+.orange {
     background-color: #ff9933;
 }
 .blue-light {
     background-color: #009999;
 }
-.number-s {
-    text-align: center;
-    font-size: min(5vh, 2vw);
-    top: 50%;
-    transform: translate(0, -50%);
-    position: relative;
+.blue {
+    background-color: #005f8e;
 }
 
-.number-b{
+
+
+.rotated-container {
+    max-width: 5vw;
+}
+.rotated-container .resizeable-text{
+    transform: translate(0%, 0%) rotate(-90deg);
+}
+
+.text-center {
     text-align: center;
-    font-size: min(8vh, 2.3vw);
-    top: 50%;
-    transform: translate(0, -50%);
-    position: relative;
-    overflow-wrap: anywhere;
+    margin: min(1vh, 0.6vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -4,7 +4,7 @@ function db_connect() {
 	
 	if(!isset($bdd)) {
              
-        $params = parse_ini_file('C:\Apache24\private\config_FDCS_DB_F.ini'); 
+        $params = parse_ini_file('C:\Apache24\private\config_FDCS_DB_PLC_V1.ini'); 
 		if ($params === false) {
             throw new \Exception("Error reading database configuration file");
         }
@@ -31,4 +31,5 @@ catch(Exception $e)
         die('Error : '.$e->getMessage());
 }
 
-?>
+
+?> 

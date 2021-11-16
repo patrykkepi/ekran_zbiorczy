@@ -3,15 +3,17 @@
 require_once('bdd.php');
 
 try{
-    $sql = sprintf("SELECT refresh_period_s FROM fdcs_settings_table");
-
-    $req = $bdd->prepare($sql);
-    $req->execute();
-    $req = $req->fetchAll();
+    $sql = sprintf("SELECT * FROM tiberpack_test_table 
+                    INNER JOIN plc_status_description ON tiberpack_test_table.status = plc_status_description.status_code
+                    ORDER BY id_tptt DESC LIMIT 1",); 
+    $req = $bdd->prepare($sql); 
+    $req->execute(); 
+    $odp = $req->fetchAll(); 
+    
     
     echo "{",
-        json_encode("success"), ":", json_encode("true"), ",",
-        json_encode("data"), ":", json_encode($req),     
+        json_encode("success"), ":", json_encode(true), ",",
+        json_encode("data"), ":", json_encode($odp[0]),     
       "}";
 }
 catch(Exception $e){
