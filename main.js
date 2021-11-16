@@ -13,7 +13,7 @@ function resizeAllElements(querySelector){
 
 function resizeText(element){
     if(element.innerText.length > 0){
-        const maxpx = 100;
+        const maxpx = 150;
         var maxWidth = element.parentElement.offsetWidth;
         var maxHeight = element.parentElement.offsetHeight;
 

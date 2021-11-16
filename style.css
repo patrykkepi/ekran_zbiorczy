@@ -14,7 +14,7 @@
 }
 
 .element {
-    margin: min(1vw, 1vh);
+    margin: min(1vh, 0.6vw);
     text-align: center;
 }
 .line-title {
@@ -63,7 +63,6 @@
 .blue {
     background-color: #005f8e;
 }
-
 
 
 .rotated-container {
